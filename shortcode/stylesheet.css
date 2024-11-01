@@ -1,0 +1,36 @@
+
+.category-checkbox{
+    visibility: hidden;/* <-- Hide the default checkbox. The rest is to hide and allow tabbing, which display:none prevents */
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+  .category-span {/* <-- Style the artificial checkbox */
+    height: 16px;
+    width: 16px;
+    border: 1px solid grey;
+    margin-right: 0.5em;
+    display: inline-block;
+    position:relative;
+  }
+  .catitem [type=checkbox]:checked + span:before {/* <-- Style its checked state */
+    content: '\2714';
+    position: absolute;
+    /* top: -12px; */
+    top: -9px;
+  }
+  .line-separator
+  {
+    width: 1px;
+    height: 300px;
+    background-color: #696969;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 800px) {
+    .catitem {
+      width: 100%;
+      padding: 0;
+    }
+  }
